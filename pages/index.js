@@ -34,7 +34,7 @@ function Home({resources}) {
 
 export async function getServerSideProps() {
 
-  const respondData = await fetch("http://localhost:3000/api/resources");
+  const respondData = await fetch("http://localhost:3001/api/resources");
   const data = await respondData.json();
 
   return {

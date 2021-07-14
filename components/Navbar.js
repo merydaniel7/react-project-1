@@ -35,12 +35,9 @@ const Navbar = () => {
                 </Link>
                 <Link href="/resources/new">
                 <a className="navbar-item is-size-5 has-text-weight-semibold">
-                    Add Resource
+                    Add
                 </a>
                 </Link>
-                <a className="navbar-item is-size-5 has-text-weight-semibold">
-                    Features
-                </a>
                 </div>
             </div>
             </div>

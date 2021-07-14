@@ -17,3 +17,40 @@ a {
 .resource-form {
   margin-top: 100px;
 }
+
+.active-resource {
+  background-color: #3140aa;
+  padding: 50px;
+  text-align: center;
+  color: white;
+  height: 300px;
+}
+
+.active-resource .resource-name {
+  font-size: 30px;
+  height: 50px;
+}
+
+.active-resource .elapsed-time {
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.active-resource .time-wrapper {
+  height: 100px;
+}
+
+.resource-complete {
+  background-color: #6cff6c !important;
+  color: black !important;
+}
+
+.resource-active {
+  background-color: #58a2fc !important;
+  color: black !important;
+}
+
+.resource-inactive {
+  background-color: rgb(255, 202, 104) !important;
+  color: black !important;
+}

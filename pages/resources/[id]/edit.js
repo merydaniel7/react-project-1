@@ -32,7 +32,7 @@ const ResourceEdit = ({resource}) => {
 
 export async function getServerSideProps({ params }) {
 
-    const dateResponse = await fetch("http://localhost:3001/api/resources/" + params.id )
+    const dateResponse = await fetch(`${process.env.API_URL}/resources/${params.id}` )
     const data = await dateResponse.json();
 
     return {

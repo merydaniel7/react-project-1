@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default async function(req, res) {
     if (req.method === "GET") {
-        const dataResponse = await fetch("http://localhost:3001/api/resources");
+        const dataResponse = await fetch(`${process.env.API_URL}/resources`);
         const data = await dataResponse.json();
 
         return res.send(data)
@@ -14,8 +14,8 @@ export default async function(req, res) {
         }
 
         const url = req.method === "POST"
-            ? "http://localhost:3001/api/resources"
-            : "http://localhost:3001/api/resources/" + id;
+            ? `${process.env.API_URL}/resources`
+            : `${process.env.API_URL}/resources/${id}`;
 
     try {
         const axiosResponse = await axios[req.method.toLowerCase()](url, req.body);
@@ -31,7 +31,7 @@ export default async function(req, res) {
         const { id } = req.body;
 
         try {
-            const axiosResponse = await axios.delete("http://localhost:3001/api/resources/" + id);
+            const axiosResponse = await axios.delete(`${process.env.API_URL}/resources/${id}`);
             return res.send(axiosResponse.data);
         } catch {
             return res.status(422).send("Data cannot be deleted!");

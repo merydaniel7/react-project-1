@@ -46,6 +46,9 @@ const ResourceDetail = ({resource}) => {
                                     {resource.description}
                                     </p>
                                     <p>
+                                    {resource.link}
+                                    </p>
+                                    <p>
                                     Time to finish: {resource.timeToFinish} min
                                     </p>
                                 </div>
@@ -111,7 +114,7 @@ const ResourceDetail = ({resource}) => {
 // params.id, the .id is come from the [id] map's id
 export async function getServerSideProps({ params }) {
 
-    const dateResponse = await fetch("http://localhost:3001/api/resources/" + params.id )
+    const dateResponse = await fetch(`${process.env.API_URL}/resources/${params.id}` )
     const data = await dateResponse.json();
 
     return {
